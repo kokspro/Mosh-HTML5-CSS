@@ -1,11 +1,17 @@
-h1 {
-  background: hsl(1deg, 100%, 35%);
+.container {
+  border: 3px solid lightgrey;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-h2 {
-  background: hsl(313deg, 100%, 55%);
-}
-
-h3 {
-  background: hsl(1deg, 100%, 76%);
+.box {
+  flex-basis: 5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 5rem;
+  height: 5rem;
+  background: gold;
+  margin: 1rem;
 }/*# sourceMappingURL=style.css.map */
