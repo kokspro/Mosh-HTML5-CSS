@@ -41,26 +41,31 @@
 //     background: gold;
 //     margin: 1rem;
 // }
-body {
-    margin: 0;
-}
-ul {
-    background-color: black;
-    color: white;
-    margin: 0;
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    list-style-type: none;
-    text-align: center;
-}
-li {
-    padding: 0.3rem;
-}
 
-@media screen and (min-width: 600px) {
-    ul {
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-}
+
+
+
+
+// body {
+//     margin: 0;
+// }
+// ul {
+//     background-color: black;
+//     color: white;
+//     margin: 0;
+//     display: flex;
+//     padding: 1rem;
+//     flex-direction: column;
+//     list-style-type: none;
+//     text-align: center;
+// }
+// li {
+//     padding: 0.3rem;
+// }
+
+// @media screen and (min-width: 600px) {
+//     ul {
+//         flex-direction: row;
+//         justify-content: flex-end;
+//     }
+// }
