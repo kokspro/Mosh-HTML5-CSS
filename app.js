@@ -163,18 +163,18 @@
 // }
 //split last function into mini functions
 
-function showPrimes(limit) {
-    for ( let number = 2; number <= limit; number++) 
-        if (isPrime(number)) 
-            console.log(number);
-}
+// function showPrimes(limit) {
+//     for ( let number = 2; number <= limit; number++) 
+//         if (isPrime(number)) 
+//             console.log(number);
+// }
 
-function isPrime(number) {
-        for ( let factor = 2; factor < number; factor++) 
-            if (number % factor === 0) 
-                return false;
-        return true;
-}
+// function isPrime(number) {
+//         for ( let factor = 2; factor < number; factor++) 
+//             if (number % factor === 0) 
+//                 return false;
+//         return true;
+// }
 
 // function showPrimes(limit) {
 //     for (let number = 2; number <= limit; number++)
@@ -188,4 +188,5 @@ function isPrime(number) {
 //     return true;        
 // }
 
-
+// copy one object properties to another
+// const another = Object.assign({}, circle);
