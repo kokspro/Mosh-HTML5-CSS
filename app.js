@@ -190,3 +190,96 @@
 
 // copy one object properties to another
 // const another = Object.assign({}, circle);
+
+
+//street city zipcode
+// display all properties of object with value
+// const address = {
+//     street: 2414,
+//     city: 'Missouri City',
+//     zipCode: 77459
+// };
+// function showAddress(obj) {
+//     for ( let items in obj ) {
+//         console.log(items, obj[items]);
+//     }
+// }
+
+
+
+//Write a Factory and blank function to initialize an address
+// function createAddress(street, city, zipCode) {
+//     return {
+//         street,
+//         city,
+//         zipCode
+//     };
+// }
+// function Address(street, city, zipCode) {
+//     this.street = street,
+//     this.city = city,
+//     this.zipCode = zipCode
+// }
+// const thirdHouse = new Address(4441, 'Bellaire', 77401);
+// const momsHouse = new Address(4441, 'Bellaire', 77401);
+// const myHouse = new Address(2414, 'Missiouri', 77459);
+// console.log(myHouse);
+
+//use constructor we made to create 2 addresses
+//we pass 2 the two addresses to see if they're equal
+
+// function areEqual(address1, address2) {
+//     return (address1.street === address2.street 
+//         && address1.city === address2.city 
+//         && address1.zipCode === address2.zipCode)     
+// }
+//we pass the 2 to see if they're the same object
+
+// function areSame(address1, address2) {
+//     return address1 === address2;
+// }
+
+
+// just make and initialize an object
+//title
+//body
+//author
+//views
+//comments
+//  comments (author, body)
+// isLive 
+
+// let post = {
+//     title: 'This post',
+//     body: 'Lorem ipsum',
+//     author: 'Chris',
+//     views: 5402,
+//     comments: [
+//         {author: 'a', body: 'b'},
+//         {author: 'c', body: 'd'},
+//         {author: 'e', body: 'f'}
+//     ],
+//     isLive: true
+// }
+
+
+//constructor function that could be a post?
+// function Post(title, body, author) {
+//     this.title = title,
+//     this.body = body,
+//     this.author = author,
+//     this.views = 0,
+//     this.comments = [],
+//     this.isLive = false
+// }
+// let post = new Post('Worth it?', 'So far its so good', 'William');
+// console.log(post);
+
+
+
+//create 3 price range objects
+let priceRange = [
+    {label: '$', tooltip: 'Inexpesive', minPrice: 1, maxPrice: 49},
+    {label: '$$', tooltip: 'Moderate', minPrice: 50, maxPrice: 99},
+    {label: '$$$', tooltip: 'Expensive', minPrice: 100, maxPrice: 200}
+];
