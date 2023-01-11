@@ -278,8 +278,128 @@
 
 
 //create 3 price range objects
-let priceRange = [
-    {label: '$', tooltip: 'Inexpesive', minPrice: 1, maxPrice: 49},
-    {label: '$$', tooltip: 'Moderate', minPrice: 50, maxPrice: 99},
-    {label: '$$$', tooltip: 'Expensive', minPrice: 100, maxPrice: 200}
-];
+// let priceRange = [
+//     {label: '$', tooltip: 'Inexpesive', minPrice: 1, maxPrice: 49},
+//     {label: '$$', tooltip: 'Moderate', minPrice: 50, maxPrice: 99},
+//     {label: '$$$', tooltip: 'Expensive', minPrice: 100, maxPrice: 200}
+// ];
+
+
+//Log all numbers in the range
+// const numbers = arrayFromRange(-4, 10);
+// console.log(numbers);
+// function arrayFromRange(min, max) {
+//     const array = [];
+//     for (let i = min; i <= max; i++) 
+//         array.push(i);
+//     return array;
+// }
+
+
+// creates a function that does what includes() does
+// const numbers = [1, 2, 3, 4];
+// console.log(includes(numbers, 1));
+// function includes(array, searchElement) {
+//     for ( let number of array ) 
+//         if (number === searchElement)
+//             return true;
+//         return false;    
+// }
+
+
+//create a function that takes 2 arrays and excludes second array from first
+// const numbers = [1, 2, 3, 4];
+// const output = except(numbers, [1, 2]);
+// console.log(output);
+
+// function except(array, excluded) {
+//     const output = [];
+//     for (let element of array) {
+//         if (!excluded.includes(element)) {
+//             output.push(element);
+//         }
+//     }
+//     return output;
+// }
+
+//create a function that moves items in an array by given offset
+// const numbers = [1, 2, 3, 4];
+// const output = move(numbers, 1, 1);
+// console.log(output);
+// function move(array, index, offset) {
+//     const position = index + offset;
+//     if (position >= array.length || position < 0) {
+//         console.error('Invalid Offset');
+//         return;
+//     }
+//     const output = [...array];
+//     const element = output.splice(index, 1)[0];
+//     console.log(element);
+//     output.splice(position + offset, 0, element);
+//     return output;
+// }
+
+//create a function that takes an array and finds out how many times something is in it
+//next use it with reduce method
+// const numbers = [1, 2, 3, 4, 1, 1, 1];
+// const count = countOccurences(numbers, 1);
+// console.log(count);
+// function countOccurences(array, searchElement) {
+//     let count = 0;
+//     for (let included of array) 
+//         if (included === searchElement) 
+//             count += 1;
+//     return counts;
+// }
+// function countOccurences(array, searchElement) {
+//     return array.reduce((accumulator, current) => {
+//         let occurance = current === searchElement ? 1 : 0;
+//         console.log(accumulator, current, searchElement);
+//         return (accumulator + occurance);
+//     }, 0);
+// }
+
+
+//create function to get largest item from array
+//use reduce after its working
+// const numbers = [1, 2, 3, 4, 5];
+// const max = getMax(numbers);
+// console.log(max);
+// function getMax(array) {
+//     if (array.length === 0) return undefined;
+    // let max = array[0];
+    // for (let number of array) 
+    //     if (number > max) 
+    //         max = number;
+    // return max;
+    //now using REDUCE
+    // array.reduce((accumulator, current) => {
+        // if (current > accumulator) 
+        //     return current;
+        // return accumulator;
+        // return (current > accumulator) ? current : accumulator;
+    // });
+//     return array.reduce((a, b) => (a > b) ? a : b );
+// }
+
+//IMPORTANT REREAD AND REDO THIS ITS A LOT
+//get all movies in 2018 with rating > 4
+//sort by rating in descending order
+//only display title of the movie
+//result should be 'b' 'a' in console
+// const movies = [
+//     { title: 'a', year: 2018, rating: 4.5},
+//     { title: 'b', year: 2018, rating: 4.9},
+//     { title: 'c', year: 2018, rating: 4.7},
+//     { title: 'd', year: 2017, rating: 4.5}
+// ];
+// const titles = movies
+//     .filter(m => m.year === 2018 && m.rating >= 4)
+//     .sort((a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map(m => m.title);
+
+// console.log(titles);    
+
+
+
