@@ -399,7 +399,92 @@
 //     .reverse()
 //     .map(m => m.title);
 
-// console.log(titles);    
+// console.log(titles);  
 
+
+// REDOING IT ALL
+// const numbers = arrayFromRange(-10, 27);
+// function arrayFromRange(min, max) {
+//     const output = [];
+//     for (let i = min; i <= max; i++)
+//         output.push(i);
+//     console.log(output);
+// }
+
+// const numbers = [1, 2, 3, 4];
+// function includes(array, searchElement) {
+//     for (let element of array) 
+//         if (element === searchElement)
+//             return true;
+//     return false;
+// }
+
+// const numbers = [1, 2, 3, 4];
+// const output = except(numbers, [1, 2]);
+// console.log(output);
+// function except(array, excluded) {
+//     let output = [];
+//     for ( let element of array) 
+//         if (!excluded.includes(element)) 
+//             output.push(element);
+//      return output;   
+// }
+
+// const numbers = [1, 2, 3, 4];
+// const output = move(numbers, 1, 1);
+// console.log(output);
+// function move(array, index, offset) {
+//     const output = [...array];
+//     const element = output.splice(index, 1)[0];
+//     output.splice(index + offset, 0, element);
+//     return output;
+// }
+
+// const numbers = [1, 2, 3, 4, 1, 1, 1];
+// const count = countOccurances(numbers, 1);
+// console.log(count);
+// function countOccurances(array, searchElement) {
+//     let count = 0;
+//     for (let element of array) 
+//         if (element === searchElement)
+//             count += 1;
+//     return count;
+// }
+// function countOccurances(array, searchElement) {
+//     return array.reduce((accumulator, current) => {
+//         const occurs = (current === searchElement) ? 1 : 0;
+//         return accumulator + occurs;
+//     }, 0);
+// }
+
+// const numbers = [1, 2, 3, 4, 7];
+// const max = getMax(numbers);
+// console.log(max);
+// function getMax(array) {
+    // let max = array[0];
+    // for (let element of array) 
+    //     if (element > max) 
+    //         max = element;
+    // return max;
+    // return array.reduce((accumulator, current) => {
+        // if (current > accumulator) 
+        //     accumulator = current;
+        // return accumulator;
+//         return (current > accumulator) ? current : accumulator;
+//     });
+// }
+
+// const movies = [
+//     { title: 'a', year: 2018, rating: 4.5},
+//     { title: 'b', year: 2018, rating: 4.7},
+//     { title: 'c', year: 2018, rating: 3},
+//     { title: 'd', year: 2017, rating: 4.5}
+// ];
+// const movieRating = movies
+//     .filter(m => m.year === 2018 && m.rating >= 4)
+//     .sort((a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map(m => m.title);
+// console.log(movieRating);   
 
 
