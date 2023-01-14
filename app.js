@@ -488,3 +488,44 @@
 // console.log(movieRating);   
 
 
+//create function that takes arguments and returns sum
+//then modify to accept an array then return the same result
+// function sum(...items) {
+//     if (items.length === 1 && Array.isArray(items[0]))
+//        items = [...items[0]]; 
+//     return items.reduce((a, b) => a + b);
+// }
+
+
+//create circle object
+//make area read only
+// const circle = {
+//     radius: 2,
+//     get area() {
+//         return Math.PI * Math.pow(this.radius, 2);
+//     } 
+// }
+
+
+//if first arg is not array, throw exception and log on console
+
+
+try {
+    const numbers = [1, 2, 3, 4];
+    const count = countOccurances(numbers, 1);
+    console.log(count);
+}
+catch (e) {
+    console.log(e.message);
+}
+
+
+function countOccurances(array, searchElement) {
+    if (!Array.isArray(array)) {
+        throw new Error('Invalid Array');
+    }
+    return array.reduce((accumulator, current) => {
+        const occurance = (current === searchElement) ? 1 : 0;
+        return accumulator + occurance;
+    }, 0);
+}
