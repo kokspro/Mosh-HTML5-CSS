@@ -510,22 +510,25 @@
 //if first arg is not array, throw exception and log on console
 
 
-try {
-    const numbers = [1, 2, 3, 4];
-    const count = countOccurances(numbers, 1);
-    console.log(count);
-}
-catch (e) {
-    console.log(e.message);
-}
+// try {
+//     const numbers = [1, 2, 3, 4];
+//     const count = countOccurances(numbers, 1);
+//     console.log(count);
+// }
+// catch (e) {
+//     console.log(e.message);
+// }
 
 
-function countOccurances(array, searchElement) {
-    if (!Array.isArray(array)) {
-        throw new Error('Invalid Array');
-    }
-    return array.reduce((accumulator, current) => {
-        const occurance = (current === searchElement) ? 1 : 0;
-        return accumulator + occurance;
-    }, 0);
-}
+// function countOccurances(array, searchElement) {
+//     if (!Array.isArray(array)) {
+//         throw new Error('Invalid Array');
+//     }
+//     return array.reduce((accumulator, current) => {
+//         const occurance = (current === searchElement) ? 1 : 0;
+//         return accumulator + occurance;
+//     }, 0);
+// }
+
+
+

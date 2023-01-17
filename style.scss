@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 // h1 {
 //     background: hsl(1, 100%, 35%);
 // }
@@ -46,26 +52,117 @@
 
 
 
-body {
-    margin: 0;
-}
+// body {
+//     margin: 0;
+// }
+// ul {
+//     background-color: black;
+//     color: white;
+//     margin: 0;
+//     display: flex;
+//     padding: 1rem;
+//     flex-direction: column;
+//     list-style-type: none;
+//     text-align: center;
+// }
+// li {
+//     padding: 0.3rem;
+// }
+
+// @media screen and (min-width: 600px) {
+//     ul {
+//         flex-direction: row;
+//         justify-content: flex-end;
+//     }
+// }
+
+// .container {
+//     display: grid;
+//     grid-template: 100px auto 100px / 30fr 70fr;
+//     grid-template-areas: 
+//     "header  header" 
+//     "sidebar main" 
+//     ".  footer"; //. represents an empty cell
+//     gap: 10px;
+//     border: solid grey 1px;
+//     height: 100vh;
+// }
+// .box {
+//     // width: 5rem;
+//     // height: 5rem;
+//     background: gold;
+//     border: black solid 1px;
+// }
+// .box-one {
+//     grid-area: footer;
+// }
+// .box-four {
+//     grid-area: header;
+// }
+
+// img {
+//     width: 100%;
+//     object-fit: cover;
+//     border-radius: 5px;
+// }
+// .container {
+//     display: grid;
+//     // grid-template: 100fr;
+//     // justify-content: center;
+//     // align-items: center;
+//     gap: 5px;
+// }
+
+// @media screen and (min-width: 768px) {
+//     .container {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
+
+// @media screen and (min-width: 1024px) {
+//     .container {
+//         grid-template: auto / repeat(3, 33.3fr);
+//     }
+//     .container img:nth-of-type(3) {
+//         grid-area: 1 / 2 / 3 / 4;
+//     }
+// }
+// body {
+//     background: grey;
+//     object-fit: cover;
+// }
+// div {
+//     color: white;
+//     flex-direction: column;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100vh;
+//     p {
+//         margin-top: 2rem;
+//         background: rgba($color: black, $alpha: .3);
+//         padding: .4rem;
+//     }
+// }
+
 ul {
-    background-color: black;
-    color: white;
-    margin: 0;
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    list-style-type: none;
-    text-align: center;
+    background: #2a2138;
+    color: wheat;
+    font-size: 1.5rem;
+    height: 100vh;
 }
-li {
-    padding: 0.3rem;
+li, i {
+    padding: 10px;
+}
+i {
+    margin-right: 10px;
+}
+li:hover {
+    background: #221a2e;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px){
     ul {
-        flex-direction: row;
-        justify-content: flex-end;
+        width: 25%;
     }
 }
