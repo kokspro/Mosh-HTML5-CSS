@@ -531,4 +531,62 @@
 // }
 
 
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+// **************************************************************SECTION NOW ON ADVANCED JAVASCRIPT COURSE*****************************************************
+
+// Object Literal Syntax
+// const circle = {
+//     radius: 1,
+//     location: {
+//         x: 1,
+//         y: 1
+//     },
+//     draw: function() {
+//         console.log('draw');
+//     }
+// };
+//draw is a method
+//radius and location are properties
+//use dot notation
+
+
+//Factory Function
+
+// function createCircle(radius) {
+//     return {
+//         radius: radius,     // can just be radius, if parameter is same name
+//         draw: function() {
+//             console.log('draw');
+//         }
+//     };
+// }
+
+// const circle = createCircle(1);
+// circle.draw();
+
+//Constructor Function
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+
+const circle = new Circle(1);
+// new operator creates an empty object, then it sets this to point to object, returns object from function
+
+
 
