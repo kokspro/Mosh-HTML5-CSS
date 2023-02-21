@@ -578,15 +578,149 @@
 
 //Constructor Function
 
-function Circle(radius) {
-    this.radius = radius;
-    this.draw = function() {
-        console.log('draw');
-    }
-}
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
 
-const circle = new Circle(1);
+// const circle = new Circle(1);
 // new operator creates an empty object, then it sets this to point to object, returns object from function
+
+
+//Reference of objects and primitives
+// let x = 10;
+// let y = x;
+
+// x = 20;
+
+// console.log(x, y);
+
+// let x = { value: 10};
+// let y = x;
+
+// x.value = 20;
+
+// console.log(x, y);
+
+// let number = 10;
+// function increase (number) {
+//     number++; 
+// }
+
+// increase(number);
+// console.log(number);
+
+// let obj = {value: 10};
+// function increase (obj) {
+//     obj.value++; 
+// }
+
+// increase(obj);
+// console.log(obj);
+
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
+// const circle = new Circle(10);
+// console.log(circle);
+// circle.diameter = circle.radius * 2;
+// console.log(circle);
+// circle.location = { x: 1};    //last two comments are the same
+// circle['location'] = { x: 1}; //You would use bracket when things are at runtime
+//For instance you don't know what the property is called yet, or if there
+//are special characters, for instance location-center
+
+// delete circle.location;
+
+//for in loop
+//for in loop is best for iterating over properties in an object
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
+
+// const circle = new Circle(10);
+
+// for (let key in circle) {
+//     console.log(key);
+//     console.log(key, circle[key]);
+//     console.log(circle[key]);
+// }
+
+//Method approach to get all the keys in an object, returns all keys as an array
+// const keys = Object.keys(circle);
+// console.log(keys);
+
+//to check if a certain property or method is in an object
+// if ('radius' in circle)
+//     console.log('Circle has a radius');
+
+//Abstraction
+//You can set things you don't want to be accessible from the outside
+//as a local variable, see second version
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.defaultLocation = { x: 0, y: 0};
+//     this.computeOptimumLocation = function(factor) {
+//         //  ....
+//     };
+//     this.draw = function() {
+//         this.computeOptimumLocation();
+//         console.log('draw');
+//     }
+// }
+// const circle = new Circle(10);
+
+
+// function Circle2(radius) {
+//     this.radius = radius;
+//     let defaultLocation = { x: 0, y: 0};
+//     let computeOptimumLocation = function(factor) {
+//         //  ....
+//     };
+//     this.draw = function() {
+//         computeOptimumLocation(0.1);
+//         console.log('draw');
+//     }
+// }
+// const circle2 = new Circle(10);
+
+// IMPORTANTTTTT  Use Object.defineProperty to define getters or setters
+// function Circle(radius) {
+//     this.radius = radius;
+//     let defaultLocation = { x: 0, y: 0};
+//     this.getDefaultLocation = function() {
+//         return defaultLocation;
+//     };
+
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+//     Object.defineProperty(this, 'defaultLocation', {
+//         get: function() {
+//             return defaultLocation;
+//         },
+//         set: function(value) {
+//             if (!value.x || !value.y)
+//                 throw new Error('Invalid Location');
+//             defaultLocation = value;
+//         }
+//     });
+// }
+// const circle = new Circle(10);
+// circle.draw();
+// console.log(circle);
+
+
+
+
 
 
 
