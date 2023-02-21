@@ -719,6 +719,37 @@
 // console.log(circle);
 
 
+//*********************** */
+//*********************** */
+//*********************** */
+//*********************** STOPWATCH EXERCISE*/
+//*********************** */
+//*********************** */
+//*********************** */
+function Stopwatch() {
+    let startTime, endTime, running, duration = 0;
+    this.start = function() {
+        if (running)
+            throw new Error('Stopwatch is already running!');
+        startTime = Date.now();
+        running = true;
+    };
+    this.stop = function() {
+        if (!running)
+            throw new Error('Stopwatch is already stopped!');
+        endTime = Date.now(); 
+        running = false;
+        duration += (endTime - startTime)/1000;
+    };
+    this.reset = function() {
+        startTime, endTime, running, duration = 0;
+    };
+    Object.defineProperty(this, 'duration', {
+        get: function() { return duration; }
+    });
+}
+const sw = new Stopwatch();
+
 
 
 
