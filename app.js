@@ -726,29 +726,57 @@
 //*********************** */
 //*********************** */
 //*********************** */
-function Stopwatch() {
-    let startTime, endTime, running, duration = 0;
-    this.start = function() {
-        if (running)
-            throw new Error('Stopwatch is already running!');
-        startTime = Date.now();
-        running = true;
-    };
-    this.stop = function() {
-        if (!running)
-            throw new Error('Stopwatch is already stopped!');
-        endTime = Date.now(); 
-        running = false;
-        duration += (endTime - startTime)/1000;
-    };
-    this.reset = function() {
-        startTime, endTime, running, duration = 0;
-    };
-    Object.defineProperty(this, 'duration', {
-        get: function() { return duration; }
-    });
-}
-const sw = new Stopwatch();
+// function Stopwatch() {
+//     let startTime, endTime, running, duration = 0;
+//     this.start = function() {
+//         if (running)
+//             throw new Error('Stopwatch is already running!');
+//         startTime = Date.now();
+//         running = true;
+//     };
+//     this.stop = function() {
+//         if (!running)
+//             throw new Error('Stopwatch is already stopped!');
+//         endTime = Date.now(); 
+//         running = false;
+//         duration += (endTime - startTime)/1000;
+//     };
+//     this.reset = function() {
+//         startTime, endTime, running, duration = 0;
+//     };
+//     Object.defineProperty(this, 'duration', {
+//         get: function() { return duration; }
+//     });
+// }
+// const sw = new Stopwatch();
+
+
+//****************PROTOTYPES******************* */
+
+// function Circle(radius) {
+//     // Instance members
+//     this.radius = radius;
+//     this.move = function() {
+//         this.draw();
+//         console.log('move');
+//     }
+// }
+
+// Circle.prototype.draw = function() {
+//     //Prototype members
+//     console.log('draw');
+// }
+// Circle.prototype.toString = function() {
+//     return 'Circle with radius ' + this.radius;
+// }
+
+// const c1 = new Circle(1);
+// const c2 = new Circle(2);
+
+//for in loop returns all members, instance/own and prototype
+
+//Exercise take stopwatch, and move all methods to the prototype
+//Turns out it was a bad idea and was not necessary
 
 
 
