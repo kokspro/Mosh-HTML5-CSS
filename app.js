@@ -902,44 +902,81 @@
 
 //Polymorphism
 //Amazing, just amazing
-function extend(Child, Parent) { 
-    Child.prototype = Object.create(Parent.prototype);   
-    Child.prototype.constructor = Child;
-} 
-function Shape() {
+// function extend(Child, Parent) { 
+//     Child.prototype = Object.create(Parent.prototype);   
+//     Child.prototype.constructor = Child;
+// } 
+// function Shape() {
+
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle() {
+
+// }
+// extend(Circle, Shape);
+
+// Circle.prototype.duplicate = function() { 
+//     console.log('duplicate circle');  
+// }
+
+// function Square() {
+
+// }
+// extend(Square, Shape);
+// Square.prototype.duplicate = function() { 
+//     console.log('duplicate square');  
+// }
+
+// const shapes = [
+//     new Circle(),
+//     new Square()
+// ];
+
+// for(let shape of shapes) {
+//     shape.duplicate();
+// }
+
+//Mixins JavaScript Style
+
+function mixin(target, ...sources) {      //... here is rest operator
+    Object.assign(target, ...sources);      //... here is the spread operator 
+}
+
+const canEat = {
+    eat: function() {
+        this.hunger--;
+        console.log('eating');
+    }
+};
+
+const canWalk = {
+    walk: function() {
+        console.log('walking');
+    }
+};
+
+const canSwim = {
+    swim: function() {
+        console.log('swimming');
+    }
+};
+
+function Person() {
+}
+function Goldfish() {
 
 }
-Shape.prototype.duplicate = function() {
-    console.log('duplicate');
-}
-function Circle() {
-
-}
-extend(Circle, Shape);
-
-Circle.prototype.duplicate = function() { 
-    console.log('duplicate circle');  
-}
-
-function Square() {
-
-}
-extend(Square, Shape);
-Square.prototype.duplicate = function() { 
-    console.log('duplicate square');  
-}
-
-const shapes = [
-    new Circle(),
-    new Square()
-];
-
-for(let shape of shapes) {
-    shape.duplicate();
-}
-
-
-
+mixin(Person.prototype, canEat, canWalk);  //Better way to do whats below
+mixin(Goldfish.prototype, canEat, canSwim);
+ 
+// Object.assign(Person.prototype, canEat, canWalk);  //Can use to copy properties and methods from one object 
+// Object.assign(Goldfish.prototype, canEat, canSwim);
+const person = new Person(); 
+const fishy = new Goldfish();         
+console.log(person);
+console.log(fishy);
 
 
 
