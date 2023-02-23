@@ -779,6 +779,133 @@
 //Turns out it was a bad idea and was not necessary
 
 
+//Inheriting from your own prototypes
+
+// function Shape() {
+   
+// }
+
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+
+// function Circle(radius) {
+//     this.radius = radius;
+// }
+
+// Circle.prototype = Object.create(Shape.prototype);   //important new part
+
+// Circle.prototype.draw = function() {
+//     console.log('draw');
+// }
+
+// const s = new Shape();
+// const c = new Circle(1);
+
+//problem with the above, this should fix
+
+// function Shape() {
+   
+// }
+
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+
+// function Circle(radius) {
+//     this.radius = radius;
+// }
+// //This resets the prototype of the circle, making it from shape constructor
+// Circle.prototype = Object.create(Shape.prototype);   //important new part
+// Circle.prototype.constructor = Circle;  //Should always reset constructor when you reset prototype
+
+// Circle.prototype.draw = function() {
+//     console.log('draw');
+// }
+
+// const s = new Shape();
+// const c = new Circle(1);
+
+//Super constructor
+// function Shape(color) {
+//    this.color = color;
+// }
+
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+
+// function Circle(radius, color) {
+//     Shape.call(this, color); //This is how you call the super constructor to pull params
+//     this.radius = radius;
+// }
+
+// Circle.prototype = Object.create(Shape.prototype);   
+// Circle.prototype.constructor = Circle;  
+
+// Circle.prototype.draw = function() {
+//     console.log('draw');
+// }
+
+// const s = new Shape();
+// const c = new Circle(1, 'blue');
+
+//Intermediate Function Inheritence
+// function Shape(color) {
+//     this.color = color;
+//  }
+//  Shape.prototype.duplicate = function() {
+//      console.log('duplicate');
+//  }
+//  function extend(Child, Parent) { //Uppercase params because they're supposed to be constructor functions
+//     Child.prototype = Object.create(Parent.prototype);   //Refactored to not repeat per object
+//     Child.prototype.constructor = Child;
+//  } 
+//  function Circle(radius, color) {
+//     Shape.call(this, color);
+//     this.radius = radius;
+//  }
+//  extend(Circle, Shape);
+//  Circle.prototype.draw = function() {
+//      console.log('draw');
+//  }
+//  function Square(size) {
+//     this.size = size;
+//  }
+//  extend(Square, Shape);
+//  const s = new Shape();
+//  const c = new Circle(1, 'blue');
+
+//Method Overriding
+function extend(Child, Parent) { 
+    Child.prototype = Object.create(Parent.prototype);   
+    Child.prototype.constructor = Child;
+} 
+function Shape() {
+
+}
+Shape.prototype.duplicate = function() {
+    console.log('duplicate');
+}
+function Circle() {
+
+}
+extend(Circle, Shape);
+
+Circle.prototype.duplicate = function() { //This is the part that overrides the shape.duplicate
+    Shape.prototype.duplicate.call(this); //Run like a normal function, but .call method for parent access
+    console.log('duplicate circle');  //Its like Cascading in CSS
+}
+
+const c = new Circle();
+
+
+
+
+
+
+
+
 
 
 
