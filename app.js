@@ -940,43 +940,76 @@
 
 //Mixins JavaScript Style
 
-function mixin(target, ...sources) {      //... here is rest operator
-    Object.assign(target, ...sources);      //... here is the spread operator 
-}
+// function mixin(target, ...sources) {      //... here is rest operator
+//     Object.assign(target, ...sources);      //... here is the spread operator 
+// }
 
-const canEat = {
-    eat: function() {
-        this.hunger--;
-        console.log('eating');
-    }
-};
+// const canEat = {
+//     eat: function() {
+//         this.hunger--;
+//         console.log('eating');
+//     }
+// };
 
-const canWalk = {
-    walk: function() {
-        console.log('walking');
-    }
-};
+// const canWalk = {
+//     walk: function() {
+//         console.log('walking');
+//     }
+// };
 
-const canSwim = {
-    swim: function() {
-        console.log('swimming');
-    }
-};
+// const canSwim = {
+//     swim: function() {
+//         console.log('swimming');
+//     }
+// };
 
-function Person() {
-}
-function Goldfish() {
+// function Person() {
+// }
+// function Goldfish() {
 
-}
-mixin(Person.prototype, canEat, canWalk);  //Better way to do whats below
-mixin(Goldfish.prototype, canEat, canSwim);
+// }
+// mixin(Person.prototype, canEat, canWalk);  //Better way to do whats below
+// mixin(Goldfish.prototype, canEat, canSwim);
  
-// Object.assign(Person.prototype, canEat, canWalk);  //Can use to copy properties and methods from one object 
-// Object.assign(Goldfish.prototype, canEat, canSwim);
-const person = new Person(); 
-const fishy = new Goldfish();         
-console.log(person);
-console.log(fishy);
+// // Object.assign(Person.prototype, canEat, canWalk);  //Can use to copy properties and methods from one object 
+// // Object.assign(Goldfish.prototype, canEat, canSwim);
+// const person = new Person(); 
+// const fishy = new Goldfish();         
+// console.log(person);
+// console.log(fishy);
+
+//PROTOTYPICAL  INHERITENCE EXERCISES
+//Design 2 objects, one is HtmlElement one is HtmlSelectElement 
+//HTMLSEs parent is HtmlElement, it represents a dropdown menu
+//Htmle has one method, click, prototype has another method focus
+//1 own method, one prototype method
+//e.click logs clicked, e.focus logs focused
+//htmlse optionally passes an array of items, or makes empty array items:
+//additem method and remove item method. addItem adds an item to items array
+//removeitem method removes item from items array
+//htmlse inherits click from htmle and focus from htmle prototype
+//do not use extend
+
+function HtmlElement() {
+    this.click = function() {
+        console.log('clicked');
+    }
+}
+HtmlElement.prototype.focus = function() {
+    console.log('focused');
+}
+const e = new HtmlElement();
+function HtmlSelectElement(...arrays) {
+    this.items = arrays;
+    this.addItem = function(number) {
+        
+    };
+    this.removeItem = function(number) {
+        
+    };
+
+}
+const s = new HtmlSelectElement([1, 2, 3]);
 
 
 
