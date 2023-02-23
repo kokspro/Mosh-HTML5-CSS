@@ -877,6 +877,31 @@
 //  const c = new Circle(1, 'blue');
 
 //Method Overriding
+// function extend(Child, Parent) { 
+//     Child.prototype = Object.create(Parent.prototype);   
+//     Child.prototype.constructor = Child;
+// } 
+// function Shape() {
+
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle() {
+
+// }
+// extend(Circle, Shape);
+
+// Circle.prototype.duplicate = function() { //This is the part that overrides the shape.duplicate
+//     Shape.prototype.duplicate.call(this); //Run like a normal function, but .call method for parent access
+//     console.log('duplicate circle');  //Its like Cascading in CSS
+// }
+
+// const c = new Circle();
+
+
+//Polymorphism
+//Amazing, just amazing
 function extend(Child, Parent) { 
     Child.prototype = Object.create(Parent.prototype);   
     Child.prototype.constructor = Child;
@@ -892,12 +917,47 @@ function Circle() {
 }
 extend(Circle, Shape);
 
-Circle.prototype.duplicate = function() { //This is the part that overrides the shape.duplicate
-    Shape.prototype.duplicate.call(this); //Run like a normal function, but .call method for parent access
-    console.log('duplicate circle');  //Its like Cascading in CSS
+Circle.prototype.duplicate = function() { 
+    console.log('duplicate circle');  
 }
 
-const c = new Circle();
+function Square() {
+
+}
+extend(Square, Shape);
+Square.prototype.duplicate = function() { 
+    console.log('duplicate square');  
+}
+
+const shapes = [
+    new Circle(),
+    new Square()
+];
+
+for(let shape of shapes) {
+    shape.duplicate();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
