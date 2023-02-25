@@ -990,26 +990,45 @@
 //htmlse inherits click from htmle and focus from htmle prototype
 //do not use extend
 
-function HtmlElement() {
-    this.click = function() {
-        console.log('clicked');
-    }
-}
-HtmlElement.prototype.focus = function() {
-    console.log('focused');
-}
-const e = new HtmlElement();
-function HtmlSelectElement(...arrays) {
-    this.items = arrays;
-    this.addItem = function(number) {
-        
-    };
-    this.removeItem = function(number) {
-        
-    };
+// function HtmlElement() {
+//     this.click = function() {
+//         console.log('clicked');
+//     }
+// }
+// HtmlElement.prototype.focus = function() {
+//     console.log('focused');
+// }
+// const e = new HtmlElement();
+// function HtmlSelectElement(...array) {
+//     this.items = array || [];
+//     this.addItem = function(number) {
+//         this.items.push(number);
+//         this.items.sort((a, b) => a - b);
+//     };
+//     this.removeItem = function(number) {
+//         if (this.items.includes(number)) {
+//             let spot = this.items.indexOf(number);
+//             this.items.splice(spot, 1);
+//             // this.items.splice(this.items.indexOf(number), 1);   This would be better
+//         } else 
+//             return 'This value is not in the array';
+//     };
+// }
+// //This is the right way
+// HtmlSelectElement.prototype = new HtmlElement(); //still should 
+// //This was why mine wasn't working
+// // HtmlSelectElement.prototype = Object.create(HtmlElement.prototype);
+// // HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 
-}
-const s = new HtmlSelectElement([1, 2, 3]);
+// const s = new HtmlSelectElement(1, 2, 3);
+
+//Polymorphism Exercise
+// function HtmlImageElemen(src) {
+//     this.src = src;
+//     this.render = function() {
+//         return `<img src="${this.src}"`;
+//     }
+// }
 
 
 
