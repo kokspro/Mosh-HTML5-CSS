@@ -1216,27 +1216,42 @@
 //if you want properties, you need a constructor
 //if both have a constructor, you need to call the super constructor in
 //the child constructor
+// class Shape {
+//     constructor(color) {
+//         this.color = color;
+//     }
+//     move() {
+//         console.log('move');
+//     }
+// }
+
+// class Circle extends Shape {    //extends Shape is all you have to do to inherit
+//     constructor(color, radius) {
+//         super(color);
+//         this.radius = radius;
+//     }
+//     draw() {
+//         console.log('draw');
+//     }
+// }
+
+// const c = new Circle('red', 5);
+
+//Method Overriding in Classes
+
 class Shape {
-    constructor(color) {
-        this.color = color;
-    }
     move() {
         console.log('move');
     }
 }
 
-class Circle extends Shape {    //extends Shape is all you have to do to inherit
-    constructor(color, radius) {
-        super(color);
-        this.radius = radius;
-    }
-    draw() {
-        console.log('draw');
+class Circle extends Shape {
+    move() {
+        console.log('circle move');
     }
 }
 
-const c = new Circle('red', 5);
-
+const c = new Circle();
 
 
 
