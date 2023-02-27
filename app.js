@@ -1155,6 +1155,27 @@
 // const draw = c.draw;
 // draw();
 
+//Private Members Using Symbols
+
+// new primative type called symbol
+
+const _radius = Symbol();
+const _draw = Symbol();
+class Circle {
+    constructor(radius) {
+        // this.radius = radius;
+        // this['radius'] = radius; //these two are the same
+        this[_radius] = radius; //private property
+    }
+    [_draw]() {
+    }
+}
+const c = new Circle(1);
+// c.radius = 4; //This is public, and can be changed
+//You cannot directly alter Symbol from outside, it is a unique value
+//Sumbol() === Symbol() is false
+
+
 
 
 
