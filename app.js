@@ -1195,22 +1195,47 @@
 // const c = new Circle(1);
 
 //Getters and Setter
-const _radius = new WeakMap();
+// const _radius = new WeakMap();
 
-class Circle {
-    constructor(radius) {
-        _radius.set(this, radius);
+// class Circle {
+//     constructor(radius) {
+//         _radius.set(this, radius);
+//     }
+//                     //looks like a method, but acts like a property
+//     get radius() {   //to implement a getter, change to a property with get in front
+//         return _radius.get(this);
+//     }
+//     set radius(value) {
+//         if (value <= 0) throw new Error('Invalid Radius');
+//         _radius.set(this, value);
+//     }
+// }
+// const c = new Circle(1);
+
+//Inheritance
+//if you want properties, you need a constructor
+//if both have a constructor, you need to call the super constructor in
+//the child constructor
+class Shape {
+    constructor(color) {
+        this.color = color;
     }
-                    //looks like a method, but acts like a property
-    get radius() {   //to implement a getter, change to a property with get in front
-        return _radius.get(this);
-    }
-    set radius(value) {
-        if (value <= 0) throw new Error('Invalid Radius');
-        _radius.set(this, value);
+    move() {
+        console.log('move');
     }
 }
-const c = new Circle(1);
+
+class Circle extends Shape {    //extends Shape is all you have to do to inherit
+    constructor(color, radius) {
+        super(color);
+        this.radius = radius;
+    }
+    draw() {
+        console.log('draw');
+    }
+}
+
+const c = new Circle('red', 5);
 
 
 
