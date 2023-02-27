@@ -1159,21 +1159,40 @@
 
 // new primative type called symbol
 
-const _radius = Symbol();
-const _draw = Symbol();
-class Circle {
-    constructor(radius) {
-        // this.radius = radius;
-        // this['radius'] = radius; //these two are the same
-        this[_radius] = radius; //private property
-    }
-    [_draw]() {
-    }
-}
-const c = new Circle(1);
+// const _radius = Symbol();
+// const _draw = Symbol();
+// class Circle {
+//     constructor(radius) {
+//         // this.radius = radius;
+//         // this['radius'] = radius; //these two are the same
+//         this[_radius] = radius; //private property
+//     }
+//     [_draw]() {
+//     }
+// }
+// const c = new Circle(1);
 // c.radius = 4; //This is public, and can be changed
 //You cannot directly alter Symbol from outside, it is a unique value
 //Sumbol() === Symbol() is false
+
+//Private Members Using WeakMaps
+
+const _radius = new WeakMap();  //keys are objects, values can be anything, the keys are weak
+const _move = new WeakMap();
+class Circle {
+    constructor(radius) {
+        _radius.set(this, radius);
+        _move.set(this, () => {
+            console.log('move', this);
+        });
+    }
+    draw() {
+        console.log(_radius.get(this));
+        _move.get(this)();
+        console.log('draw');
+    }
+}
+const c = new Circle(1);
 
 
 
