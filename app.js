@@ -1177,23 +1177,40 @@
 
 //Private Members Using WeakMaps
 
-const _radius = new WeakMap();  //keys are objects, values can be anything, the keys are weak
-const _move = new WeakMap();
+// const _radius = new WeakMap();  //keys are objects, values can be anything, the keys are weak
+// const _move = new WeakMap();
+// class Circle {
+//     constructor(radius) {
+//         _radius.set(this, radius);
+//         _move.set(this, () => {
+//             console.log('move', this);
+//         });
+//     }
+//     draw() {
+//         console.log(_radius.get(this));
+//         _move.get(this)();
+//         console.log('draw');
+//     }
+// }
+// const c = new Circle(1);
+
+//Getters and Setter
+const _radius = new WeakMap();
+
 class Circle {
     constructor(radius) {
         _radius.set(this, radius);
-        _move.set(this, () => {
-            console.log('move', this);
-        });
     }
-    draw() {
-        console.log(_radius.get(this));
-        _move.get(this)();
-        console.log('draw');
+                    //looks like a method, but acts like a property
+    get radius() {   //to implement a getter, change to a property with get in front
+        return _radius.get(this);
+    }
+    set radius(value) {
+        if (value <= 0) throw new Error('Invalid Radius');
+        _radius.set(this, value);
     }
 }
 const c = new Circle(1);
-
 
 
 
