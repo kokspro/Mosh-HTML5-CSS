@@ -1239,21 +1239,62 @@
 
 //Method Overriding in Classes
 
-class Shape {
-    move() {
-        console.log('move');
+// class Shape {
+//     move() {
+//         console.log('move');
+//     }
+// }
+
+// class Circle extends Shape {
+//     move() {
+//         super.move();  //If you wanted to call the parent method
+//         console.log('circle move');
+//     }
+// }
+
+// const c = new Circle();
+
+//*************************CLASS EXERCISES */
+//*************************CLASS EXERCISES */
+//*************************CLASS EXERCISES */
+//*************************CLASS EXERCISES */
+//*************************CLASS EXERCISES */
+//*************************CLASS EXERCISES */
+
+// Implement a stack using ES6 classes, a stack is a data structure like a physical stack or pile, usually learned at Uni in Data Structure subject
+//A lot of devs can build applications with Angular, React, Node, but they don't know the fundamentals of algorithms and data structures
+//A stack has two essential operations, push to add an object, and pop to remove the object on top
+//objects in a stack cannot be accessed by index like an array, but you can pop to remove the most recent to access the others
+
+//create a stack object with a count property
+//prototype has 3 methos, peek, pop, and push . . .also get count is needed
+//peek returns the object on the top of the stack, but does not remove it
+//pop will return the object on top and remove it
+//count is how many objects are in the stack
+//if stack is empty peek and pop will throw an error that the stack is empty
+const _stack = new WeakMap();
+class Stack {
+    constructor() {
+        _stack.set(this, []);
+    }
+    pop() {
+        const stack = _stack.get(this);
+        if(stack.length === 0) throw new Error('Stack is empty!');
+        return stack.pop();
+    }
+    push(str) {
+        _stack.get(this).push(str);
+    }
+    peek() {
+        const stack = _stack.get(this);
+        if (stack.length === 0) throw new Error('Stack is empty!');
+        return stack[stack.length - 1];
+    }
+    get count() {
+        return _stack.get(this).length;
     }
 }
-
-class Circle extends Shape {
-    move() {
-        console.log('circle move');
-    }
-}
-
-const c = new Circle();
-
-
+const s = new Stack();
 
 
 
