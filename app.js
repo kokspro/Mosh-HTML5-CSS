@@ -1031,6 +1031,132 @@
 // }
 
 
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+//***************************************************CLASSSSSSSSSEEEEESSSSSS */
+
+//constructor way
+// function Circle(radius) {
+//     this.radius = radius;
+
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
+
+//class way
+//constructor goes in the body with properties
+
+// class Circle {    //typeof Circle would be a function not an object
+//     constructor(radius) {
+//         this.radius = radius;
+//         this.move = function() {   //Defining the method here will put the method on the object instance
+//             console.log('moved');
+//         }
+//     }
+//     draw() {     //All methods in the body end up in the prototype of the object
+//         console.log('draw');
+//     }
+// }
+
+// const c = new Circle(1);
+
+//Hoisting
+//function declaration - these are hoisted (can call it before its shown)
+// function sayHello() {
+
+// }
+// //function expression - these are not hoisted, must be called after
+// const sayGoodbye = function() {};
+
+// //classes can be defined both ways - but neither are hoisted
+// //always use declaration, simpler and cleaner
+// //class declaration
+// class Circle {
+// }
+// //class expression
+// const Square = class {
+// };
+
+//Static Methods and instance methods
+// class Circle {
+//     construction(radius) {
+//         this.radius = radius;
+//     }
+//     //instance method - available on the instance of a class, which is an object
+//     draw() {
+//         console.log('draw');
+//     }
+//     //static Method
+//     static parse(str) {
+//         const radius = JSON.parse(str).radius;
+//         return new Circle(radius);
+//     }
+// }
+// // const circle = new Circle(1);
+// const circle = Circle.parse('{ "radius": 1 }');
+// console.log(circle);
+//static methods are available on the class itself, not the object instance
+//usually used to utility functions not given to a specific object
+
+//TRYING AGAIN WITHOUT COMMENTS *************************
+//TRYING AGAIN WITHOUT COMMENTS *************************
+//TRYING AGAIN WITHOUT COMMENTS *************************
+//TRYING AGAIN WITHOUT COMMENTS *************************
+//*************************Find out when you would want to use this? */
+// class Circle {
+//     constructor(radius) {
+//         this.radius = radius;
+//     }
+//     draw() {
+//     }
+//     static parse(str) {
+//         const radius = JSON.parse(str).radius;
+//         return new Circle(radius);
+//     }
+// }
+// const circle = Circle.parse('{"radius":1}');
+// console.log(circle);
+
+//The THIS Keyword in JavaScript
+//  'use strict'; //--- Enables strict mode, helps with some errors, prevents modifying global object
+// const Circle = function() {
+//     this.draw = function() {
+//         console.log(this);
+//     }
+// }
+// const c= new Circle();
+// //Method Call
+// c.draw();
+
+// const draw = c.draw;
+// console.log(draw);
+
+//Function Call - by default this will point to the global object
+// draw();
+
+// class Circle {  //By default, body of classes are executed in strict mode, classes are so cool
+//     draw() {
+//         console.log(this);
+//     }
+// }
+
+// const c = new Circle();
+// const draw = c.draw;
+// draw();
+
+
+
 
 
 
