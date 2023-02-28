@@ -1272,60 +1272,82 @@
 //pop will return the object on top and remove it
 //count is how many objects are in the stack
 //if stack is empty peek and pop will throw an error that the stack is empty
-const _stack = new WeakMap();
-class Stack {
-    constructor() {
-        _stack.set(this, []);
+// const _stack = new WeakMap();
+// class Stack {
+//     constructor() {
+//         _stack.set(this, []);
+//     }
+//     pop() {
+//         const stack = _stack.get(this);
+//         if(stack.length === 0) throw new Error('Stack is empty!');
+//         return stack.pop();
+//     }
+//     push(str) {
+//         _stack.get(this).push(str);
+//     }
+//     peek() {
+//         const stack = _stack.get(this);
+//         if (stack.length === 0) throw new Error('Stack is empty!');
+//         return stack[stack.length - 1];
+//     }
+//     get count() {
+//         return _stack.get(this).length;
+//     }
+// }
+// const s = new Stack();
+
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
+
+//Modules
+//Modularity is better maintainability
+//Can reuse code
+//Abstraction is easier
+// Popular module formats
+// AMD Asyncronous module definition used in browser ---Dated
+// Commong JS is used in Node
+// UMD is universal module definition browser and node ---Dated
+//ES6 Modules used in browsers
+
+const _radius = new WeakMap();
+
+class Circle {
+    constructor(radius) {
+        _radius.set(this, radius);
     }
-    pop() {
-        const stack = _stack.get(this);
-        if(stack.length === 0) throw new Error('Stack is empty!');
-        return stack.pop();
-    }
-    push(str) {
-        _stack.get(this).push(str);
-    }
-    peek() {
-        const stack = _stack.get(this);
-        if (stack.length === 0) throw new Error('Stack is empty!');
-        return stack[stack.length - 1];
-    }
-    get count() {
-        return _stack.get(this).length;
+    draw() {
+        console.log('Circle with radius ' + _radius.get(this));
     }
 }
-const s = new Stack();
 
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^IMPORTANT CODE^^^^^^^^^^^^^^^^^^^^^
-
-
+const c = new Circle(10);
+c.draw();
 
 
 
