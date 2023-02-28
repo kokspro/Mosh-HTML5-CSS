@@ -1335,16 +1335,10 @@
 // UMD is universal module definition browser and node ---Dated
 //ES6 Modules used in browsers
 
-const _radius = new WeakMap();
 
-class Circle {
-    constructor(radius) {
-        _radius.set(this, radius);
-    }
-    draw() {
-        console.log('Circle with radius ' + _radius.get(this));
-    }
-}
+//ES6 Modules
+
+import {Circle} from './circle.js';  //imports from circle.js
 
 const c = new Circle(10);
 c.draw();
